@@ -28,3 +28,6 @@ jobs:
           git add docs/data
           git diff --cached --quiet || git commit -m "뉴스 업데이트 $(TZ=Asia/Seoul date +%F)"
           git push
+concurrency:
+  group: news-fetch
+  cancel-in-progress: false
